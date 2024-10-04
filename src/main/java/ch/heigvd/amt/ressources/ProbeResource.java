@@ -1,5 +1,6 @@
-package ch.heigvd.amt;
+package ch.heigvd.amt.ressources;
 
+import ch.heigvd.amt.services.ProbeService;
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 import jakarta.inject.Inject;
@@ -17,6 +18,12 @@ public class ProbeResource {
     @Inject
     Template registerPage;
 
+    @Inject
+    Template probesPage;
+
+    @Inject
+    ProbeService probeService;
+
     @GET
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance index() {
@@ -28,6 +35,14 @@ public class ProbeResource {
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance register() {
         return registerPage.instance();
+    }
+
+    @GET
+    @Path("/probes")
+    @Produces(MediaType.TEXT_HTML)
+    public TemplateInstance probes() {
+        var probeList = probeService.listProb();
+        return probesPage.data("probeList", probeList);
     }
 
 }
