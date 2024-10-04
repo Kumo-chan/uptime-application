@@ -1,20 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Uptime</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-    <div>
-        <a class="navbar-brand" href="http://localhost">Uptime</a>
-    </div>
-    <!-- Navbar content -->
-</nav>
-<div class="container my-5">
+{#include layout}
+    {#title}Home{/}
     <h1> Welcome to Uptime</h1>
     <p class="fs-5">
         This service enables you to monitor the status of websites by registering probes.
@@ -22,9 +7,4 @@
     <hr class="col-lg-8 px-0">
     <a href="/probes" class="btn btn-secondary">List the probes</a>
     <a href="/register" class="btn btn-primary">Register a new probe</a>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+    {/}

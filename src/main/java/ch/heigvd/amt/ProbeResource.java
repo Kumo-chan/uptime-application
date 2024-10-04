@@ -14,9 +14,20 @@ public class ProbeResource {
     @Inject
     Template indexPage;
 
+    @Inject
+    Template registerPage;
+
     @GET
     @Produces(MediaType.TEXT_HTML)
-    public TemplateInstance hello() {
+    public TemplateInstance index() {
         return indexPage.instance();
     }
+
+    @GET
+    @Path("/register")
+    @Produces(MediaType.TEXT_HTML)
+    public TemplateInstance register() {
+        return registerPage.instance();
+    }
+
 }
