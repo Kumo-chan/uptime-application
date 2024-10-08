@@ -27,8 +27,7 @@ public class Status {
 
     }
 
-    public Status(long id, Probe probe, Instant timestamp, Integer status, Integer duration) {
-        this.id = id;
+    public Status(Probe probe, Instant timestamp, Integer status, Integer duration) {
         this.probe = probe;
         this.timestamp = timestamp;
         this.status = status;
